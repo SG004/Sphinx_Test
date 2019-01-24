@@ -1,10 +1,4 @@
-workflows:
-  version: 2
-  build:
-    jobs:
-      - Test
-
-version: 2.0
+version: 2
 
 jobs:
   test:
@@ -18,4 +12,11 @@ jobs:
        - run:
           name: Test
           command: pytest
+
+workflows:
+  version: 2
+  build:
+    jobs:
+      - Test
+
 
