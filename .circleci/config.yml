@@ -5,11 +5,11 @@ jobs:
     docker:
       - image: python:3.7
     steps:
-      - checkout
-      - run:
+       - checkout
+       - run:
           name: Install dependencies
           command: pip install -r requirements.txt
-      - run:
+       - run:
           name: Test
           command: pytest
 
