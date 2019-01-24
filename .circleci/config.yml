@@ -19,7 +19,7 @@ jobs:
       - checkout
       - run:
           name: Install dependencies
-          command: pip install -4 requirements.txt
+          command: pip install -r requirements.txt
       - run:
           name: Build docs
           command: cd docs/ && make html
