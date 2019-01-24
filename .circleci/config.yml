@@ -12,6 +12,7 @@ jobs:
        - run:
           name: Test
           command: pytest
+
   docs-build:
     docker:
       - image: python:3.7
@@ -26,6 +27,7 @@ jobs:
       - persist_to_workspace:
           root: _build
           paths: html
+
   docs-deploy:
     docker:
       - image: node:8.10.0
@@ -37,8 +39,8 @@ jobs:
           name: Install and configure dependencies
           command: |
             npm install -g --silent gh-pages@2.0.1
-            git config user.email "ci-build@klukas.net"
-            git config user.name "ci-build"
+            git config user.email "jrschlitz@gmail.com"
+            git config user.name "SG004"
       - run:
           name: Deploy docs to gh-pages branch
           command: gh-pages --dist _build/html
@@ -50,7 +52,7 @@ workflows:
       - test
       - docs-build
       - docs-deploy:
-          requres:
+          requires:
             - test
             - docs-build
           filters:
