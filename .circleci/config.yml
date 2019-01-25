@@ -20,7 +20,7 @@ jobs:
       - checkout
       - run:
           name: Install dependencies
-          command: pip install -r requirements.txt
+          command: pip install -r docs/requirements.txt
       - run:
           name: Build docs
           command: make html
@@ -46,7 +46,7 @@ jobs:
             git config user.name "SG004"
       - run:
           name: Deploy docs to gh-pages branch
-          command: gh-pages --dist _build/html
+          command: gh-pages --dist docs/_build/html
 
 workflows:
   version: 2
