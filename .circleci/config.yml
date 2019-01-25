@@ -26,7 +26,7 @@ jobs:
           command: make html
       - run:
           name: Link Check
-          command: sphinx-build -b linkcheck Sphinx_Python_Document_Test_Project Sphinx_Python_Document_Test_Project/_build
+          command: sphinx-build -b docs/ docs/_build
       - persist_to_workspace:
           root: _build
           paths: html
