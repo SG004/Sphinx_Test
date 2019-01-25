@@ -23,7 +23,7 @@ jobs:
           command: pip install -r requirements.txt
       - run:
           name: Build docs
-          command: cd docs/ && make html
+          command: cd docs && make html
       - run:
           name: Link Check
           command: cd .. && make linkcheck
