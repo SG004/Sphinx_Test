@@ -22,9 +22,6 @@ jobs:
           name: Install dependencies
           command: pip install -r requirements.txt
       - run:
-          name: QuickStart Sphinx
-          command: sphinx-quickstart -q -p Sphinx_text -a Joseph -v 2
-      - run:
           name: Build docs
           command: make html
       - run:
