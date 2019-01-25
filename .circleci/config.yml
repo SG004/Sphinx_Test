@@ -1,7 +1,6 @@
 version: 2
 
 jobs:
-  working_directory: docs/
   test:
     docker:
       - image: python:3.7
@@ -21,15 +20,15 @@ jobs:
       - checkout
       - run:
           name: Install dependencies
-          command: pip install -r docs/requirements.txt
+          command: pip install -r requirements.txt
       - run:
           name: Build docs
-          command: make html
+          command: cd docs/ && make html
       - run:
           name: Link Check
-          command: sphinx-build -b docs/ docs/_build
+          command: cd .. && make linkcheck
       - persist_to_workspace:
-          root: _build
+          root: docs/_build
           paths: html
 
   docs-deploy:
