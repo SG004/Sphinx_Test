@@ -27,7 +27,7 @@ jobs:
       - run:
           name: Link Check
           command: make linkcheck
-          
+
       - persist_to_workspace:
           root: _build
           paths: html
@@ -47,7 +47,7 @@ jobs:
             git config user.name "SG004"
       - run:
           name: Deploy docs to gh-pages branch
-          command: gh-pages --dist docs/_build/html
+          command: gh-pages --dist _build/html
 
 workflows:
   version: 2
